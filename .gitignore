@@ -1,0 +1,14 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Editor de código
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Cache do navegador (se houver)
+.cache/
