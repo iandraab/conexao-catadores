@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conexão Catadores — Conexões que transformam realidades</title>
+  <meta name="description" content="Projeto Conexão Catadores (UFC): dando visibilidade ao trabalho dos catadores de materiais recicláveis no Brasil." />
+
+  <!-- Fontes: Montserrat (títulos) + Poppins (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__brand">
+      <img src="assets/img/brand-mark.svg" alt="" class="nav__mark" />
+      <span class="nav__wordmark">CONEXÃO<span class="dot">.</span>CATADORES</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="navMenu">
+      <a href="#quem-somos">Quem são</a>
+      <a href="#rotina">A rotina</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#historias">Histórias</a>
+      <a href="#entenda">Entenda mais</a>
+      <a href="#acoes">O que fazer</a>
+      <a href="#projeto">O projeto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="hero section" id="inicio">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__diagonal" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow eyebrow--green reveal"><span class="eyebrow__line"></span>CATADORES DO BRASIL</p>
+          <h1 class="hero__title reveal">
+            <span class="c-white">Conexões que</span><br />
+            <span class="c-yellow">transformam</span><br />
+            <span class="c-green">realidades.</span>
+          </h1>
+          <p class="hero__lead reveal">
+            Todos os dias, antes mesmo de a cidade despertar, milhares de catadores de
+            materiais recicláveis já estão nas ruas. Empurrando carrinhos e percorrendo
+            longas distâncias, eles desempenham um papel essencial para a reciclagem no
+            Brasil, embora sua atuação ainda seja pouco reconhecida pela sociedade.
+          </p>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__photo">
+            <div class="hero__photo-inner">
+              <img src="assets/img/hero-woman.png" alt="Catadora separando materiais recicláveis" />
+            </div>
+          </div>
+          <div class="hero__ufc">
+            <span>UMA INICIATIVA DA UFC</span>
+            <img src="assets/img/logo-ufc.png" alt="Universidade Federal do Ceará" />
+          </div>
+        </div>
+      </div>
+
+      <!-- estatísticas -->
+      <div class="container hero__stats">
+        <div class="stat-pill reveal">
+          <img src="assets/img/icon-people.svg" alt="" class="stat-pill__icon" />
+          <div><span class="stat-pill__num">800 mil</span><span class="stat-pill__label">CATADORES NO PAÍS</span></div>
+        </div>
+        <div class="stat-pill reveal">
+          <span class="stat-pill__icon stat-pill__icon--shield" aria-hidden="true"></span>
+          <div><span class="stat-pill__num">90%</span><span class="stat-pill__label">SEM PROTEÇÃO SOCIAL</span></div>
+        </div>
+        <div class="stat-pill reveal">
+          <img src="assets/img/icon-recycle.svg" alt="" class="stat-pill__icon stat-pill__icon--recycle" />
+          <div><span class="stat-pill__num">R$ 15 bi</span><span class="stat-pill__label">GERADOS À CADEIA PRODUTIVA</span></div>
+        </div>
+      </div>
+
+      <div class="container hero__scroll">
+        <span>ROLE PARA DESCOBRIR</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ===================== 2. QUEM SÃO ===================== -->
+    <section class="section section--green" id="quem-somos">
+      <div class="container split">
+        <div class="split__text">
+          <p class="eyebrow reveal"><span class="tri"></span>QUEM SÃO OS CATADORES?</p>
+          <h2 class="display reveal">
+            <span class="c-dark">Invisíveis</span><br />
+            <span class="c-yellow">na cidade,</span><br />
+            <span class="c-dark">essenciais ao</span><br />
+            <span class="c-dark">planeta.</span>
+          </h2>
+          <p class="lead reveal">
+            Os catadores de materiais recicláveis desempenham uma função indispensável para
+            a sociedade. São eles os responsáveis por coletar, separar e encaminhar para a
+            reciclagem grande parte dos resíduos que seriam descartados em aterros sanitários
+            ou deixados nas ruas. Seu trabalho contribui diretamente para a preservação do
+            meio ambiente, para a redução da poluição e para o fortalecimento da economia circular.
+          </p>
+          <p class="lead reveal">
+            No Brasil, milhares de famílias encontram na catação sua principal fonte de renda.
+            Apesar da relevância de sua atuação, os catadores ainda enfrentam desafios como a
+            baixa remuneração, a informalidade e a falta de reconhecimento social. Reconhecer
+            sua importância significa compreender que a sustentabilidade das cidades depende
+            também do trabalho dessas pessoas.
+          </p>
+        </div>
+
+        <div class="split__media reveal">
+          <figure class="photo-card">
+            <div class="photo-card__img photo-card__img--placeholder">
+              <span class="tag tag--light">CATADORA EM ROTA DE COLETA</span>
+            </div>
+          </figure>
+          <blockquote class="quote">
+            <p>“A gente limpa a cidade, mas a cidade não enxerga a gente.”</p>
+            <cite>CATADORA, 50 ANOS — FORTALEZA, CE</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. ROTINA ===================== -->
+    <section class="section section--blue" id="rotina">
+      <div class="container split">
+        <div class="split__text">
+          <p class="eyebrow reveal"><span class="tri"></span>A ROTINA DOS CATADORES</p>
+          <h2 class="display reveal">
+            <span class="c-white">Um amanhecer</span><br />
+            <span class="c-yellow">antes da luz.</span>
+          </h2>
+          <p class="lead reveal">
+            Enquanto grande parte da cidade ainda dorme, muitos catadores já iniciaram sua
+            jornada. Equipados apenas com seus carrinhos e a própria força física, eles
+            percorrem longas distâncias em busca de materiais recicláveis que possam ser
+            vendidos posteriormente.
+          </p>
+          <p class="lead reveal">
+            Ao longo do dia, enfrentam o calor, as condições climáticas adversas, o trânsito
+            e os riscos associados ao manuseio inadequado de resíduos. Mesmo diante dessas
+            dificuldades, seguem desempenhando um papel fundamental para a limpeza urbana e
+            para a preservação ambiental.
+          </p>
+        </div>
+
+        <div class="split__media reveal">
+          <figure class="photo-card">
+            <div class="photo-card__img photo-card__img--placeholder">
+              <span class="tag">COLETA NA MADRUGADA</span>
+            </div>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-card__img photo-card__img--placeholder">
+              <span class="tag">COLETA NA MADRUGADA</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. IMPACTO ===================== -->
+    <section class="section section--dark" id="impacto">
+      <div class="container">
+        <p class="eyebrow eyebrow--green reveal"><span class="tri tri--green"></span>IMPACTO DO TRABALHO</p>
+        <h2 class="display reveal">
+          <span class="c-white">O peso de um</span>
+          <span class="c-yellow"> trabalho invisível.</span>
+        </h2>
+        <p class="lead lead--narrow reveal">
+          Os dados apresentados demonstram que a reciclagem brasileira depende diretamente
+          do esforço diário de milhares de trabalhadores que permanecem invisíveis para
+          grande parte da sociedade.
+        </p>
+
+        <div class="data-grid">
+          <article class="data-card reveal">
+            <span class="data-card__num c-green">200kg</span>
+            <p>Peso médio carregado por viagem no carrinho, empurrado manualmente em ruas sem infraestrutura.</p>
+          </article>
+          <article class="data-card reveal">
+            <span class="data-card__num c-yellow">R$ 15bi</span>
+            <p>Valor gerado à cadeia produtiva da reciclagem anualmente pelos catadores brasileiros (IPEA, 2023).</p>
+          </article>
+          <article class="data-card reveal">
+            <span class="data-card__num c-green">+40%</span>
+            <p>Da renda dos catadores pode aumentar com a organização em cooperativas. <em>[texto a confirmar]</em></p>
+          </article>
+          <article class="data-card reveal">
+            <span class="data-card__num c-yellow">13 mi</span>
+            <p>Toneladas de resíduos desviadas de aterros por ano, equivalente a 10.000 Maracanãs cheios.</p>
+          </article>
+          <article class="data-card reveal">
+            <span class="data-card__num c-green">90%</span>
+            <p>Do material reciclável que chega às indústrias passou pelas mãos de catadores.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. HISTÓRIAS ===================== -->
+    <section class="section section--orange" id="historias">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="tri"></span>HISTÓRIAS E VOZES</p>
+        <h2 class="display reveal"><span class="c-white">Rostos por trás dos carrinhos.</span></h2>
+        <p class="lead lead--narrow reveal">
+          Quando falamos sobre reciclagem, é comum pensar apenas nos resíduos. No entanto,
+          por trás de cada tonelada reciclada existem histórias de vida marcadas pelo esforço,
+          pela superação e pela busca diária por dignidade. Clique para conhecer algumas dessas histórias.
+        </p>
+
+        <div class="profiles">
+          <article class="profile reveal" tabindex="0" role="button" aria-expanded="false">
+            <span class="tag tag--orange">PERFIL</span>
+            <h3 class="profile__name">“História Curta”</h3>
+            <div class="profile__body"><p>Texto da história a ser adicionado.</p></div>
+          </article>
+          <article class="profile reveal" tabindex="0" role="button" aria-expanded="false">
+            <span class="tag tag--orange">PERFIL</span>
+            <h3 class="profile__name">“História Curta”</h3>
+            <div class="profile__body"><p>Texto da história a ser adicionado.</p></div>
+          </article>
+          <article class="profile reveal" tabindex="0" role="button" aria-expanded="false">
+            <span class="tag tag--orange">PERFIL</span>
+            <h3 class="profile__name">“História Curta”</h3>
+            <div class="profile__body"><p>Texto da história a ser adicionado.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. ENTENDA MAIS (FAQ) ===================== -->
+    <section class="section section--cream" id="entenda">
+      <div class="container split split--top">
+        <div class="split__text">
+          <p class="eyebrow reveal"><span class="tri tri--dark"></span>ENTENDA MAIS</p>
+          <h2 class="display c-dark reveal">O que está por trás da reciclagem</h2>
+          <p class="lead lead--dark reveal">
+            Perguntas frequentes sobre a realidade dos catadores, o valor do seu trabalho e
+            como cada um de nós pode fazer diferença.
+          </p>
+
+          <div class="faq">
+            <details class="faq__item reveal">
+              <summary>Por que catadores ganham tão pouco se a reciclagem vale bilhões?</summary>
+              <div class="faq__content">
+                <p>A cadeia da reciclagem tem muitos intermediários entre o catador e a
+                indústria. O catador, por estar no início e sem poder de barganha, fica com a
+                menor fatia de um mercado bilionário.</p>
+                <p class="faq__note">Papelão: ~R$ 0,30/kg • Alumínio: ~R$ 4–6/kg • PET: ~R$ 1,50/kg</p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>O que muda quando um catador entra em uma cooperativa?</summary>
+              <div class="faq__content">
+                <p>Com a organização coletiva, catadores ganham poder de negociação, acesso a
+                equipamentos, triagem eficiente e contratos diretos — eliminando intermediários.</p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>Como separar o lixo em casa afeta a renda dos catadores?</summary>
+              <div class="faq__content">
+                <p><em>[Resposta a confirmar no conteúdo do Figma.]</em></p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>Qual é o impacto ambiental desse trabalho?</summary>
+              <div class="faq__content">
+                <p><em>[Resposta a confirmar no conteúdo do Figma.]</em></p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="split__media reveal">
+          <figure class="photo-card photo-card--sm">
+            <div class="photo-card__img photo-card__img--placeholder">
+              <span class="tag tag--dark">TRIAGEM DE MATERIAL</span>
+            </div>
+          </figure>
+          <figure class="photo-card photo-card--sm">
+            <div class="photo-card__img photo-card__img--placeholder">
+              <span class="tag tag--dark">GALPÃO DE COOPERATIVA</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. DADO 13 MI ===================== -->
+    <section class="section section--cream section--center" id="dados">
+      <div class="container bigstat">
+        <figure class="bigstat__img photo-card__img--placeholder reveal">
+          <span class="tag tag--dark">IMAGEM EXEMPLO</span>
+        </figure>
+        <div class="bigstat__text reveal">
+          <p class="bigstat__num"><span class="c-green">13 Mi</span></p>
+          <p class="bigstat__sub c-dark">De toneladas desviadas de aterros por ano.</p>
+          <p class="lead lead--dark">
+            Sem os catadores, o colapso dos aterros sanitários brasileiros seria muito mais
+            rápido e a população acabaria pagando por isso.
+          </p>
+          <div class="colorbars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. O QUE VOCÊ PODE FAZER ===================== -->
+    <section class="section section--green" id="acoes">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="tri tri--dark"></span>O QUE VOCÊ PODE FAZER</p>
+        <h2 class="display reveal"><span class="c-dark">Cada gesto importa</span></h2>
+        <p class="lead reveal">Ações simples que impactam diretamente a renda e o trabalho de quem coleta.</p>
+
+        <div class="actions">
+          <article class="action reveal"><h3>Separe o lixo seco do orgânico</h3></article>
+          <article class="action reveal"><h3>Lave as embalagens</h3></article>
+          <article class="action reveal"><h3>Achate o papelão</h3></article>
+          <article class="action reveal">
+            <h3>Apoie cooperativas locais</h3>
+            <p>Projetos como a ACCS fazem a diferença.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. O PROJETO ===================== -->
+    <section class="section section--dark section--center" id="projeto">
+      <div class="container">
+        <p class="eyebrow eyebrow--green reveal"><span class="tri tri--green"></span>PROJETO CONEXÃO CATADORES</p>
+        <h2 class="display display--lg reveal">
+          <span class="c-white">O trabalho invisível</span>
+          <span class="c-green"> merece ser visto.</span>
+        </h2>
+        <p class="lead lead--narrow reveal">
+          Desde 2026, o projeto Conexão Catadores aproxima o meio acadêmico da realidade dos
+          catadores, gerando pesquisa, visibilidade e ação concreta. Porque o que não é visto,
+          não é transformado.
+        </p>
+        <p class="lead lead--narrow reveal">
+          Ao longo deste projeto, buscamos dar visibilidade ao trabalho dos catadores de
+          materiais recicláveis e destacar sua importância para a sustentabilidade das cidades.
+          Esperamos que esta iniciativa incentive uma nova forma de enxergar esses profissionais:
+          como agentes ambientais essenciais para a construção de um futuro mais justo e sustentável.
+        </p>
+        <div class="projeto__ufc reveal">
+          <img src="assets/img/logo-ufc.png" alt="Universidade Federal do Ceará" />
+          <span>UMA INICIATIVA DA UNIVERSIDADE FEDERAL DO CEARÁ</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
