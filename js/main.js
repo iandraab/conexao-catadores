@@ -7,31 +7,36 @@
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
   /* ---------- 1. Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
 
   // Aplica um pequeno atraso em cascata entre itens irmãos
   revealEls.forEach((el) => {
-    const siblings = [...el.parentElement.children].filter((c) => c.classList.contains("reveal"));
+    const siblings = [...el.parentElement.children].filter((c) =>
+      c.classList.contains("reveal"),
+    );
     const index = siblings.indexOf(el);
     el.style.setProperty("--reveal-delay", `${Math.min(index, 4) * 0.08}s`);
   });
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target); // anima só uma vez
-      }
-    });
-  }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target); // anima só uma vez
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+  );
 
   revealEls.forEach((el) => io.observe(el));
 
   /* ---------- 2. Navbar: fundo ao rolar ---------- */
   const nav = document.getElementById("nav");
-  const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 40);
+  const onScroll = () =>
+    nav.classList.toggle("is-scrolled", window.scrollY > 40);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -54,6 +59,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ---------- 3.1. Navbar: link ativo / seção atual ---------- */
+  const navLinks = document.querySelectorAll(".nav__menu a");
+  const sections = [...navLinks]
+    .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  const setActiveLink = (sectionId) => {
+    navLinks.forEach((link) => {
+      link.classList.toggle(
+        "is-active",
+        link.getAttribute("href") === `#${sectionId}`,
+      );
+    });
+  };
+
+  const updateActiveLink = () => {
+    const position = window.scrollY + 80;
+    let currentSection = sections[0]?.id;
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= position) {
+        currentSection = section.id;
+      }
+    });
+
+    if (currentSection) {
+      setActiveLink(currentSection);
+    }
+  };
+
+  const onScrollActive = () => {
+    window.requestAnimationFrame(updateActiveLink);
+  };
+
+  window.addEventListener("scroll", onScrollActive, { passive: true });
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash.slice(1);
+    if (hash) setActiveLink(hash);
+  });
+  updateActiveLink();
+
   /* ---------- 4. Cartões de perfil (Histórias) → modal ---------- */
   const modal = document.getElementById("storyModal");
   if (modal) {
@@ -62,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalText = document.getElementById("storyModalText");
 
     const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     );
 
     const openModal = (card) => {
@@ -110,7 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const open = () => openModal(card);
       card.addEventListener("click", open);
       card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
       });
     });
 
@@ -118,7 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
       el.addEventListener("click", closeModal);
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+      if (e.key === "Escape" && modal.classList.contains("is-open"))
+        closeModal();
     });
   }
 
@@ -172,5 +222,4 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(onEnd, 450); // fallback caso o transitionend não dispare
     });
   });
-
 });

@@ -319,8 +319,12 @@ ul {
   color: var(--muted);
   transition: color 0.2s ease;
 }
-.nav__menu a:hover {
+.nav__menu a:hover,
+.nav__menu a.is-active {
   color: var(--white);
+}
+.nav__menu a.is-active {
+  font-weight: 700;
 }
 
 .nav__toggle {
