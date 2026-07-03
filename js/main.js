@@ -122,4 +122,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- 5. FAQ (Entenda Mais) — abrir/fechar animado ---------- */
+  const faqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  document.querySelectorAll(".faq__item").forEach((item) => {
+    const summary = item.querySelector("summary");
+    const content = item.querySelector(".faq__content");
+    if (!summary || !content) return;
+
+    summary.addEventListener("click", (e) => {
+      // respeita "reduzir movimento": deixa o toggle nativo (instantâneo)
+      if (faqReduce.matches) return;
+      e.preventDefault();
+      if (item.dataset.animating === "1") return;
+      item.dataset.animating = "1";
+
+      const closing = item.open;
+      const finish = () => {
+        // ao fechar, o CSS .faq__item:not([open]) mantém colapsado;
+        // ao abrir, a altura volta para auto
+        if (closing) item.open = false;
+        content.style.height = "";
+        content.style.opacity = "";
+        item.dataset.animating = "";
+      };
+      let done = false;
+      const onEnd = (ev) => {
+        if (done || (ev && ev.propertyName !== "height")) return;
+        done = true;
+        content.removeEventListener("transitionend", onEnd);
+        finish();
+      };
+
+      if (closing) {
+        content.style.height = content.scrollHeight + "px";
+        content.style.opacity = "1";
+        void content.offsetHeight; // força reflow p/ registrar o estado inicial
+        content.style.height = "0px";
+        content.style.opacity = "0";
+      } else {
+        item.open = true;
+        const target = content.scrollHeight;
+        content.style.height = "0px";
+        content.style.opacity = "0";
+        void content.offsetHeight; // força reflow p/ registrar o estado inicial
+        content.style.height = target + "px";
+        content.style.opacity = "1";
+      }
+      content.addEventListener("transitionend", onEnd);
+      setTimeout(onEnd, 450); // fallback caso o transitionend não dispare
+    });
+  });
+
 });

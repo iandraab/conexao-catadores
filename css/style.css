@@ -42,7 +42,8 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px;
+  /* logo abaixo da altura real do header (~54.8px) p/ não sobrar a seção anterior */
+  scroll-padding-top: 54px;
 }
 body {
   font-family: var(--font-body);
@@ -270,9 +271,23 @@ ul {
     padding 0.3s ease;
 }
 .nav.is-scrolled {
+  padding-block: 0.65rem;
+}
+/* fundo/blur no ::before para o .nav NÃO virar containing-block do menu fixed
+   (backdrop-filter no próprio .nav cortava o menu mobile ao rolar) */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(43, 49, 71, 0.92);
   backdrop-filter: blur(8px);
-  padding-block: 0.65rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.nav.is-scrolled::before {
+  opacity: 1;
 }
 .nav__brand {
   display: flex;
@@ -869,10 +884,6 @@ ul {
 .story-modal__text p + p {
   margin-top: 0.85rem;
 }
-.story-modal__text .profile__quotes-label {
-  margin-top: 1.2rem;
-  color: #fff;
-}
 .story-modal__text blockquote {
   margin: 0.7rem 0 0;
   padding: 0.35rem 0 0.35rem 1rem;
@@ -886,6 +897,11 @@ ul {
    ========================================================= */
 .faq {
   margin-top: 2rem;
+}
+.faq__hint {
+  margin-top: 0.85rem;
+  font-weight: 700;
+  color: var(--green-deep);
 }
 .faq__item {
   border-bottom: 1px solid rgba(43, 49, 71, 0.18);
@@ -918,6 +934,18 @@ ul {
 }
 .faq__content {
   padding-top: 0.85rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition:
+    height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease;
+}
+/* estado fechado: colapsado (não depende da ocultação nativa do <details>) */
+.faq__item:not([open]) .faq__content {
+  height: 0;
+  padding-top: 0;
+  opacity: 0;
 }
 .faq__content p {
   color: var(--muted-dark);
@@ -927,6 +955,10 @@ ul {
 .faq__note {
   font-weight: 600;
   color: var(--green-deep) !important;
+}
+.faq__note a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 /* =========================================================
