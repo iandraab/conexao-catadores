@@ -703,14 +703,17 @@ ul {
   justify-content: flex-end;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0);
   transition:
     transform 0.25s ease,
-    background 0.25s ease;
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .profile:hover,
 .profile:focus-visible {
   transform: translateY(-6px);
   background: rgba(0, 0, 0, 0.28);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
   outline: none;
 }
 .profile .tag {
@@ -727,6 +730,11 @@ ul {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: transform 0.35s ease;
+}
+.profile:hover .profile__img,
+.profile:focus-visible .profile__img {
+  transform: scale(1.06);
 }
 .profile__name,
 .profile__body {
@@ -921,6 +929,13 @@ ul {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  transition: color 0.2s ease;
+}
+.faq__item summary:hover {
+  color: var(--green-deep);
+}
+.faq__item summary:hover::after {
+  color: var(--green-deep);
 }
 .faq__item summary::-webkit-details-marker {
   display: none;
@@ -1018,7 +1033,7 @@ ul {
    8. AÇÕES
    ========================================================= */
 .lead--acoes {
-  color: var(--ink);
+  color: #fff;
 }
 .actions {
   display: grid;
@@ -1100,7 +1115,8 @@ ul {
   transform: translateY(28px);
   transition:
     opacity 0.7s ease,
-    transform 0.7s ease;
+    transform 0.7s ease,
+    box-shadow 0.25s ease;
   transition-delay: var(--reveal-delay, 0s);
 }
 .reveal.is-visible {
