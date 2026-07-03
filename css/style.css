@@ -590,6 +590,10 @@ ul {
   height: 100%;
   object-fit: cover;
 }
+/* escala um tico p/ cortar a linha preta nas bordas sup./inf. da foto */
+#quem-somos .photo-card__img img {
+  transform: scale(1.03);
+}
 .photo-card__img .tag {
   position: relative;
   z-index: 1;
