@@ -310,22 +310,35 @@
 
       <!-- ===================== 5. HISTÓRIAS ===================== -->
       <section class="section section--orange" id="historias">
+        <div class="historias__waves" aria-hidden="true">
+          <img src="assets/img/fundo-ondas.svg" alt="" />
+        </div>
         <div class="container">
           <p class="eyebrow reveal">
             <span class="tri"></span>HISTÓRIAS E VOZES
           </p>
-          <h2 class="display display--historias reveal">
-            <span class="c-white">Rostos por trás</span><br /><span
-              class="c-white"
-              >dos carrinhos.</span
-            >
-          </h2>
-          <p class="lead lead--narrow reveal">
-            Quando falamos sobre reciclagem, é comum pensar apenas nos resíduos.
-            No entanto, por trás de cada tonelada reciclada existem histórias de
-            vida marcadas pelo esforço, pela superação e pela busca diária por
-            dignidade. Clique para conhecer algumas dessas histórias.
-          </p>
+          <div class="historias__head">
+            <div class="historias__intro">
+              <h2 class="display display--historias reveal">
+                <span class="c-white">Rostos por trás</span><br /><span
+                  class="c-white"
+                  >dos carrinhos.</span
+                >
+              </h2>
+              <p class="lead lead--narrow reveal">
+                Quando falamos sobre reciclagem, é comum pensar apenas nos
+                resíduos. No entanto, por trás de cada tonelada reciclada
+                existem histórias de vida marcadas pelo esforço, pela superação
+                e pela busca diária por dignidade.
+              </p>
+              <p class="lead lead--narrow lead--cta reveal">
+                Clique para conhecer algumas dessas histórias.
+              </p>
+            </div>
+            <div class="historias__cart reveal" aria-hidden="true">
+              <img src="assets/img/icone-carrinho.svg" alt="" />
+            </div>
+          </div>
 
           <div class="profiles">
             <article
@@ -623,31 +636,36 @@
             coleta.
           </p>
 
-          <div class="actions">
-            <article class="action reveal">
-              <span class="action__icon" aria-hidden="true">
-                <img src="assets/img/icone-reciclagem.svg" alt="" />
-              </span>
-              <h3>Separe o resíduo seco do orgânico</h3>
-            </article>
-            <article class="action reveal">
+          <div class="acoes__layout">
+            <div class="actions">
+            <article class="action action--vidro reveal">
               <span class="action__icon" aria-hidden="true">
                 <img src="assets/img/icone-garrafa.svg" alt="" />
               </span>
               <h3>Descarte o vidro quebrado com segurança</h3>
             </article>
-            <article class="action reveal">
+            <article class="action action--reciclagem reveal">
               <span class="action__icon" aria-hidden="true">
-                <img src="assets/img/icone-cardboard.svg" alt="" />
+                <img src="assets/img/icone-reciclagem.svg" alt="" />
               </span>
-              <h3>Achate o papelão</h3>
+              <h3>Separe o resíduo seco do orgânico</h3>
             </article>
-            <article class="action reveal">
+            <article class="action action--cooperativas reveal">
               <span class="action__icon" aria-hidden="true">
                 <img src="assets/img/icone-mao.svg" alt="" />
               </span>
               <h3>Apoie cooperativas locais</h3>
             </article>
+            <article class="action action--papelao reveal">
+              <span class="action__icon" aria-hidden="true">
+                <img src="assets/img/icone-cardboard.svg" alt="" />
+              </span>
+              <h3>Achate o papelão</h3>
+            </article>
+            </div>
+            <div class="acoes__globe reveal" aria-hidden="true">
+              <img src="assets/img/icone-mundo.svg" alt="" />
+            </div>
           </div>
         </div>
       </section>
@@ -712,6 +730,23 @@
           <div class="story-modal__text" id="storyModalText"></div>
         </div>
       </div>
+    </div>
+
+    <!-- Lightbox de imagem (Quem são, Rotina, Entenda) -->
+    <div class="img-modal" id="imgModal" aria-hidden="true">
+      <div class="img-modal__overlay" data-imgclose></div>
+      <button
+        class="img-modal__close"
+        type="button"
+        aria-label="Fechar"
+        data-imgclose
+      >
+        &times;
+      </button>
+      <figure class="img-modal__box" role="dialog" aria-modal="true">
+        <img class="img-modal__img" id="imgModalImg" src="" alt="" />
+        <figcaption class="img-modal__cap" id="imgModalCap"></figcaption>
+      </figure>
     </div>
 
     <script src="js/main.js"></script>
