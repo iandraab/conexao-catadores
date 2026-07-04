@@ -806,6 +806,20 @@ ul {
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
+.profile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.3) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
 .profile:hover,
 .profile:focus-visible {
   transform: translateY(-6px);
